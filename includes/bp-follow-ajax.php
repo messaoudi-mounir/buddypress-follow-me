@@ -1,15 +1,11 @@
 <?php
-
 /**
  * BP Follow ajax
  *
  * @package BP-Follow-Me
  */
  
-
 // Exit if accessed directly
-// It's a good idea to include this in each of your plugin files, for increased security on
-// improperly configured servers
 if ( !defined( 'ABSPATH' ) ) exit;
 
 /**
@@ -41,7 +37,6 @@ function bp_follow_register_actions() {
 }
 add_action( 'bp_follow_load_core_component', 'bp_follow_register_actions', 1 );
 
-
 /**
  * Load the template loop for the current object.
  *
@@ -61,5 +56,3 @@ function bp_follow_object_template_loader() {
 	bp_core_load_template( apply_filters( 'bp_follow_template', "members/single/follow/follow-loop" ) );
 	exit;
 }
-
-?>

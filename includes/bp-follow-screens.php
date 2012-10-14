@@ -1,6 +1,5 @@
 <?php
-
-/********************************************************************************
+/**
  * Screen Functions
  *
  * Screen functions are the controllers of BuddyPress. They will execute when their
@@ -11,33 +10,7 @@
  */
 
 // Exit if accessed directly
-// It's a good idea to include this in each of your plugin files, for increased security on
-// improperly configured servers
 if ( !defined( 'ABSPATH' ) ) exit;
-
-/**
- * If your component uses a top-level directory, this function will catch the requests and load
- * the index page.
- *
- * @package BuddyPress_Template_Pack
- * @since 1.6
-
-function bp_follow_directory_setup() {
-	if ( bp_is_follow_component() && !bp_current_action() && !bp_current_item() ) {
-		// This wrapper function sets the $bp->is_directory flag to true, which help other
-		// content to display content properly on your directory.
-		bp_update_is_directory( true, 'follow' );
-
-		// Add an action so that plugins can add content or modify behavior
-		do_action( 'bp_follow_directory_setup' );
-
-		bp_core_load_template( apply_filters( 'follow_directory_template', 'members/single/follow' ) );
-	}
-}
-add_action( 'bp_screens', 'bp_follow_directory_setup' );
-*/
-
-
 
 /**
  * bp-follow_screen_one()
@@ -95,5 +68,3 @@ function bp_follow_screen_activity_following() {
 	do_action( 'bp_activity_screen_following' );
 	bp_core_load_template( apply_filters( 'bp_activity_template_following', 'members/single/home' ) );
 }
-	
-?>

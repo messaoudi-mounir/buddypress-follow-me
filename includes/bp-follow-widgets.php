@@ -1,13 +1,11 @@
 <?php
 /**
- * BP Follow Wodgets
+ * BP Follow Widgets
  *
  * @package BP-Follow-Me
  */
 
 // Exit if accessed directly
-// It's a good idea to include this in each of your plugin files, for increased security on
-// improperly configured servers
 if ( !defined( 'ABSPATH' ) ) exit;
 
 /**
@@ -73,5 +71,3 @@ class BP_Follow_Following_Widget extends WP_Widget {
 	}
 }
 add_action( 'widgets_init', create_function( '', 'return register_widget("BP_Follow_Following_Widget");' ) );
-
-?>

@@ -1,5 +1,4 @@
 <?php
-
 /**
  *
  * Css and js enqueue  
@@ -7,10 +6,7 @@
  * @package BP-Follow-Me
  */
 
-
 // Exit if accessed directly
-// It's a good idea to include this in each of your plugin files, for increased security on
-// improperly configured servers
 if ( !defined( 'ABSPATH' ) ) exit;
 
 /**
@@ -36,5 +32,3 @@ function bp_follow_add_js() {
 }
 //add_action( 'template_redirect', 'bp_follow_add_js', 1 );
 add_action( 'wp_enqueue_scripts', 'bp_follow_add_js', 1 );
-
-?>

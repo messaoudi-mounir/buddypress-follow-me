@@ -1,6 +1,6 @@
 === BuddyPress FollowMe ===
-Contributors: boonebgorges
-Tags: buddypress
+Contributors: megainfo
+Tags: buddypress,Follow,Followers,Following
 Requires at least: WordPress 3.4, BuddyPress 1.5
 Tested up to: WordPress 3.4 / BuddyPress 1.6
 Stable tag: 1.0
@@ -16,10 +16,7 @@ This plugin has been updated for BuddyPress 1.6, and uses features of BP 1.5 (in
 
 == Installation ==
 
-Download and upload the plugin to your plugins folder. 
-make sure to rename the folder to 'buddypress-follow-me' if you download it from GitHub.
-
-Then Activate the plugin.
+Download and upload the plugin to your plugins folder. Then Activate the plugin.
 To follow a member, simply visit their profile and hit the Follow button, or from any members directory.
 
 == Frequently Asked Questions ==

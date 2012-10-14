@@ -1,5 +1,4 @@
 <?php
-
 /**
  * BP Follow Template Tags
  *
@@ -7,8 +6,6 @@
  */
 
 // Exit if accessed directly
-// It's a good idea to include this in each of your plugin files, for increased security on
-// improperly configured servers
 if ( !defined( 'ABSPATH' ) ) exit;
 
 /**
@@ -25,64 +22,9 @@ function bp_follow_has_items( $args = '' ) {
 		'include'         => bp_get_following_ids(),         // Pass a user_id or a list (comma-separated or array) of user_ids to only show these users
 	);
 	
-
 	$r = wp_parse_args( $args, $defaults );
 	extract( $r );
-	
 	return bp_has_members ($r);
-	
-	/*$items_template, $members_template;
-
-	$type         = 'active';
-	$user_id      = 0;
-	$page         = 1;
-	$search_terms = null;
-
-	// User filtering
-	if ( bp_displayed_user_id() )
-		$user_id = bp_displayed_user_id();
-
-	// type: active ( default ) | random | newest | popular | online | alphabetical
-	$defaults = array(
-		'type'            => $type,
-		'page'            => $page,
-		'per_page'        => 20,
-		'max'             => false,
-
-		'page_arg'        => 'upage',       // See https://buddypress.trac.wordpress.org/ticket/3679
-
-		'include'         => bp_get_following_ids(),         // Pass a user_id or a list (comma-separated or array) of user_ids to only show these users
-		'exclude'         => false,         // Pass a user_id or a list (comma-separated or array) of user_ids to exclude these users
-
-		'user_id'         => $user_id,      // Pass a user_id to only show friends of this user
-		'search_terms'    => $search_terms, // Pass search_terms to filter users by their profile data
-
-		'meta_key'        => false,	        // Only return users with this usermeta
-		'meta_value'	  => false,	        // Only return users where the usermeta value matches. Requires meta_key
-
-		'populate_extras' => true           // Fetch usermeta? Friend count, last active etc.
-	);
-
-	
-	var_dump($args);
-	$r = wp_parse_args( $args, $defaults );
-	extract( $r );
-
-	// Pass a filter if ?s= is set.
-	if ( is_null( $search_terms ) ) {
-		if ( !empty( $_REQUEST['s'] ) )
-			$search_terms = $_REQUEST['s'];
-		else
-			$search_terms = false;
-	}
-
-	// Set per_page to max if max is larger than per_page
-	if ( !empty( $max ) && ( $per_page > $max ) )
-		$per_page = $max;
-
-	$members_template = new BP_Core_Members_Template( $type, $page, $per_page, $max, $user_id, $search_terms, $include, (bool)$populate_extras, $exclude, $meta_key, $meta_value, $page_arg );
-	return apply_filters( 'bp_has_members', $members_template->has_members(), $members_template );
-	*/
 }
 
 /**
@@ -337,4 +279,3 @@ function bp_follow_add_follow_button( $args = '' ) {
 		// Filter and return the HTML button
 		return bp_get_button( apply_filters( 'bp_follow_get_add_follow_button', $button, $leader_id, $follower_id ) );
 	}
-?>

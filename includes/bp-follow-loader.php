@@ -1,6 +1,4 @@
 <?php
-
-
 /*
  * If you want the users of your component to be able to change the values of your other custom constants,
  * you can use this code to allow them to add new definitions to the wp-config.php file and set the value there.
@@ -10,10 +8,7 @@
  */
  
 // Exit if accessed directly
-// It's a good idea to include this in each of your plugin files, for increased security on
-// improperly configured servers
 if ( !defined( 'ABSPATH' ) ) exit;
-
 
 if ( file_exists( dirname( __FILE__ ) . '/languages/' . get_locale() . '.mo' ) )
 	load_textdomain( 'bp-follow', dirname( __FILE__ ) . '/bp-follow/languages/' . get_locale() . '.mo' );
@@ -345,5 +340,3 @@ function bp_follow_load_core_component() {
 	do_action('bp_follow_load_core_component');
 }
 add_action( 'bp_loaded', 'bp_follow_load_core_component' );
-
-?>

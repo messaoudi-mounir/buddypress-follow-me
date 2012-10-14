@@ -1,5 +1,4 @@
 <?php
-
 /**
  * BP Follow Classes
  *
@@ -7,8 +6,6 @@
  */
 
 // Exit if accessed directly
-// It's a good idea to include this in each of your plugin files, for increased security on
-// improperly configured servers
 if ( !defined( 'ABSPATH' ) ) exit;
 
 /**
@@ -106,5 +103,3 @@ class BP_Follow {
 		$wpdb->query( $wpdb->prepare( "DELETE FROM {$bp->follow->table_name} WHERE leader_id = %d OR follower_id = %d", $user_id, $user_id ) );
 	}
 }
-
-?>

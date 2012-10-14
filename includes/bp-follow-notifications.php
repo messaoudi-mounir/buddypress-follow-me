@@ -1,6 +1,5 @@
 <?php
-
-/********************************************************************************
+/**
  * Activity & Notification Functions
  *
  * These functions handle the recording, deleting and formatting of activity and
@@ -9,12 +8,8 @@
  * @package BP-Follow-Me
  */
 
- 
 // Exit if accessed directly
-// It's a good idea to include this in each of your plugin files, for increased security on
-// improperly configured servers
 if ( !defined( 'ABSPATH' ) ) exit;
-
 
 /**
  * bp_follow_screen_notification_settings()
@@ -28,7 +23,6 @@ function bp_follow_screen_notification_settings() {
 	if ( !$notify = bp_get_user_meta( bp_displayed_user_id(), 'notification_starts_following', true ) )
 		$notify = 'yes';
 	?>
-
 	<table class="notification-settings" id="follow-notification-settings">
 		<thead>
 			<tr>
@@ -50,10 +44,9 @@ function bp_follow_screen_notification_settings() {
 
 		<?php do_action( 'bp_follow_screen_notification_settings' ); ?>
 	</table>
-<?php
+	<?php
 }
 add_action( 'bp_notification_settings', 'bp_follow_screen_notification_settings' );
-
 
 /**
  * bp_follow_remove_screen_notifications()
@@ -71,7 +64,6 @@ function bp_follow_remove_screen_notifications() {
 }
 add_action( 'bp_follow_screen_one', 'bp_follow_remove_screen_notifications' );
 add_action( 'xprofile_screen_display_profile', 'bp_follow_remove_screen_notifications' );
-
 
 /**
  * bp_follow_format_notifications()
@@ -186,5 +178,3 @@ To view %s\'s profile: %s
 
 	wp_mail( $to, $subject, $message );
 }
-
-?>

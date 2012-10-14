@@ -1,5 +1,4 @@
 <?php
-
 /**
  * BP Follow actions
  *
@@ -7,8 +6,6 @@
  */
  
 // Exit if accessed directly
-// It's a good idea to include this in each of your plugin files, for increased security on
-// improperly configured servers
 if ( !defined( 'ABSPATH' ) ) exit;
 
 /**
@@ -146,5 +143,3 @@ function bp_follow_ajax_action_stop() {
 	exit();
 }
 add_action( 'wp_ajax_bp_unfollow', 'bp_follow_ajax_action_stop' );
-
-?>

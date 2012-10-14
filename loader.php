@@ -2,7 +2,7 @@
 /*
 Plugin Name: BuddyPress FollowMe
 Plugin URI: 
-Description: BuddyPress Follow Me Allow to members to follow other members' activity.
+Description: BP FollowMe Allow members to follow other members activity.
 Version: 1.0
 Requires at least: Example: WP 3.2.1, BuddyPress 1.5
 Tested up to: BuddyPress 1.5, 1.6 
@@ -11,6 +11,9 @@ Author: MegaInfo
 Author URI: http://profiles.wordpress.org/megainfo 
 Network: true
 */
+
+// Exit if accessed directly
+if ( !defined( 'ABSPATH' ) ) exit;
 
 /*************************************************************************************************************
  --- FollowMe 1.0 ---
@@ -54,28 +57,34 @@ add_action( 'bp_include', 'bp_follow_init' );
 function bp_follow_activate() {
 	global $bp, $wpdb;
 
-	$charset_collate = !empty( $wpdb->charset ) ? "DEFAULT CHARACTER SET $wpdb->charset" : '';
-	if ( !$table_prefix = $bp->table_prefix )
-		$table_prefix = apply_filters( 'bp_core_get_table_prefix', $wpdb->base_prefix );
+	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+	if ( is_plugin_active( 'buddypress/bp-loader.php' ) ) {
 
-	$sql[] = "CREATE TABLE {$table_prefix}bp_follow (
-			id bigint(20) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-			leader_id bigint(20) NOT NULL,
-			follower_id bigint(20) NOT NULL,
-		    KEY followers (leader_id, follower_id)
-		) {$charset_collate};";
+		$charset_collate = !empty( $wpdb->charset ) ? "DEFAULT CHARACTER SET $wpdb->charset" : '';
+		if ( !$table_prefix = $bp->table_prefix )
+			$table_prefix = apply_filters( 'bp_core_get_table_prefix', $wpdb->base_prefix );
 
-	require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-	dbDelta( $sql );
-	update_site_option( 'bp-follow-db-version', BP_FOLLOW_DB_VERSION );
-	
+		$sql[] = "CREATE TABLE {$table_prefix}bp_follow (
+				id bigint(20) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+				leader_id bigint(20) NOT NULL,
+				follower_id bigint(20) NOT NULL,
+			    KEY followers (leader_id,follower_id)
+			) {$charset_collate};";
+
+		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+		$bp_followme_error_log = dbDelta( $sql );
+		unset( $bp_followme_error_log );
+		update_site_option( 'bp-follow-db-version', BP_FOLLOW_DB_VERSION );
+	}else {
+		//deactivate_plugins( basename( __FILE__ ) ); // Deactivate this plugin
+		die( _e( 'You cannot enable BuddyPress FollowMe because <strong>BuddyPress</strong> is not active. Please install and activate BuddyPress before trying to activate Buddypress FollowMe again.' , 'bp-follow' ) );
+	}	
 }
 register_activation_hook( __FILE__, 'bp_follow_activate' );
+
 
 /* On deacativation, clean up anything your component has added. */
 function bp_follow_deactivate() {
 	/* You might want to delete any options or tables that your component created. */
 }
 register_deactivation_hook( __FILE__, 'bp_follow_deactivate' );
-
-?>

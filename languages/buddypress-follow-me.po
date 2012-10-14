@@ -1,0 +1,177 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: buddypress-follow-me\n"
+"POT-Creation-Date: 2012-10-14 18:32-0000\n"
+"PO-Revision-Date: 2012-10-14 18:32-0000\n"
+"Last-Translator: \n"
+"Language-Team: megainfo\n"
+"Language: english\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: C:\\work\\php\\wamp\\www\\wordpressdev\\wp-content"
+"\\plugins\\buddypress-follow-me\n"
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/loader.php:80
+msgid ""
+"You cannot enable BuddyPress FollowMe because <strong>BuddyPress</strong> is "
+"not active. Please install and activate BuddyPress before trying to activate "
+"Buddypress FollowMe again."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-actions.php:35
+#, php-format
+msgid "You are already following %s."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-actions.php:38
+#, php-format
+msgid "There was a problem when trying to follow %s, please try again."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-actions.php:40
+#, php-format
+msgid "You are now following %s."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-actions.php:75
+#, php-format
+msgid "You are not following %s."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-actions.php:78
+#, php-format
+msgid "There was a problem when trying to stop following %s, please try again."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-actions.php:80
+#, php-format
+msgid "You are no longer following %s."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-actions.php:105
+msgid "Already following"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-actions.php:108
+msgid "Error following user"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-actions.php:110
+msgid "You are now following"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-actions.php:133
+msgid "Not following"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-actions.php:136
+msgid "Error unfollowing user"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-actions.php:138
+msgid "Stopped following"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-functions.php:320
+msgid "The public activity for everyone you are following on this site."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-functions.php:320
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-functions.php:370
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-loader.php:292
+#, php-format
+msgid "Following <span>%d</span>"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-loader.php:52
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-loader.php:274
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-template.php:260
+msgid "Follow"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-loader.php:238
+msgid "Search Follows..."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-loader.php:302
+#, php-format
+msgid "Followers <span>%d</span>"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-notifications.php:30
+msgid "Followers/Following"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-notifications.php:31
+msgid "Yes"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-notifications.php:32
+msgid "No"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-notifications.php:39
+msgid "A member starts following your activity"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-notifications.php:92
+msgid "1 more user is now following you"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-notifications.php:95
+#, php-format
+msgid "%d more users are now following you"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-notifications.php:109
+msgid "Your list of followers"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-notifications.php:161
+#, php-format
+msgid "%s is now following you"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-notifications.php:164
+#, php-format
+msgid ""
+"%s is now following your activity.\n"
+"\n"
+"To view %s's profile: %s\n"
+"\n"
+"\n"
+"---------------------\n"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-notifications.php:172
+#, php-format
+msgid "To disable these notifications please log in and go to: %s"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-template.php:253
+msgid "Unfollow"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-widgets.php:18
+msgid "Users I'm Following"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-widgets.php:37
+msgid "Following"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-widgets.php:69
+msgid "Max users to show:"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/templates/members/single/follow/follow-loop.php:110
+msgid "Sorry, this member has no followers."
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/templates/members/single/follow/follow-loop.php:112
+msgid "Sorry, this member has no following."
+msgstr ""

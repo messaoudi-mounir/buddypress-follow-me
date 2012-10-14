@@ -1,5 +1,4 @@
 <?php
-
 /**
  *
  * Functions in this file allow this component to hook into BuddyPress so it interacts
@@ -9,10 +8,7 @@
  */
 
 // Exit if accessed directly
-// It's a good idea to include this in each of your plugin files, for increased security on
-// improperly configured servers
 if ( !defined( 'ABSPATH' ) ) exit;
-
 
 /**
  * Start following a user's activity
@@ -399,17 +395,7 @@ function bp_follow_add_member_directory_filter( $qs, $object, $filter, $scope  )
 	}
 	
 	return apply_filters( 'bp_follow_add_member_directory_filter', $qs, $filter );
-	/*
-	
-	// Only filter on directory pages (no action) and the following scope on members object.
-	if ( !empty( $bp->current_action ) || 'following' != $scope || 'members' != $object )
-		return $qs;
-	
-	$qs .= '&include=' . bp_get_following_ids( array( 'user_id' => bp_loggedin_user_id() ) );
-	
 
-	return apply_filters( 'bp_follow_add_member_directory_filter', $qs, $filter );
-	*/
 }
 add_filter( 'bp_dtheme_ajax_querystring', 'bp_follow_add_member_directory_filter', 10, 4 );
 
@@ -461,10 +447,6 @@ function bp_follow_set_activity_following_scope_on_ajax() {
 }
 add_action( 'bp_before_activity_loop', 'bp_follow_set_activity_following_scope_on_ajax' );
 
-
-
-
-
 /**
  * Removes follow relationships for all users from a user who is deleted or spammed
  *
@@ -485,53 +467,6 @@ function bp_follow_remove_data( $user_id ) {
 add_action( 'wpmu_delete_user',	'bp_follow_remove_data' );
 add_action( 'delete_user',	'bp_follow_remove_data' );
 add_action( 'make_spam_user',	'bp_follow_remove_data' );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/**
- * The -functions.php file is a good place to store miscellaneous functions needed by your plugin.
- *
- * @package BuddyPress_Skeleton_Component
- * @since 1.6
- */
- 
- /*
- function bp_follow_add_activity_scope_filter( $qs, $object, $filter, $scope ) {
-	global $bp;
-	echo '--bp_follow_add_activity_scope_filter--';
-
-
-	return apply_filters( 'bp_follow_add_activity_scope_filter', $qs, $filter );
-}
-add_filter( 'bp_dtheme_ajax_querystring', 'bp_follow_add_activity_scope_filter', 10, 4 );
-*/
-
 
 /**
  * bp_follow_load_template_filter()
@@ -569,7 +504,6 @@ function bp_follow_load_template_filter( $found_template, $templates ) {
 }
 add_filter( 'bp_located_template', 'bp_follow_load_template_filter', 10, 2 );
 
-
 /**
 * http://buddypress.trac.wordpress.org/ticket/2198
 */
@@ -577,5 +511,3 @@ function bp_follow_load_sub_template( $template ) {
 	if ( $located_template = apply_filters( 'bp_located_template', locate_template( $template , false ), $template ) )	
 		load_template( apply_filters( 'bp_load_template', $located_template ) );
 }
-
-?>
