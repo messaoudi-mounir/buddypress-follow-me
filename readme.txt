@@ -16,7 +16,14 @@ This plugin has been updated for BuddyPress 1.6, and uses features of BP 1.5 (in
 
 == Installation ==
 
-Download and upload the plugin to your plugins folder. Then Activate the plugin.
+Download and upload the plugin to your plugins folder. 
+
+--- Important ---
+If you use Buddypress Followers plugin ( http://wordpress.org/extend/plugins/buddypress-followers/ ), it should be deactivated.
+BuddyPress FollowMe use the same data of Buddypress Followers.
+----------------- 
+
+Then Activate the plugin.
 To follow a member, simply visit their profile and hit the Follow button, or from any members directory.
 
 == Frequently Asked Questions ==
