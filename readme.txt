@@ -1,6 +1,6 @@
 === BuddyPress FollowMe ===
 Contributors: megainfo
-Tags: buddypress,Follow,Followers,Following
+Tags: buddypress,follow,followers,following,badge,follow me,subscribe,subscription,tweet,twitter
 Requires at least: WordPress 3.4, BuddyPress 1.5
 Tested up to: WordPress 3.4 / BuddyPress 1.6
 Stable tag: 1.0
@@ -32,6 +32,10 @@ To follow a member, simply visit their profile and hit the Follow button, or fro
 
 Please post on the [BuddyPress Follow Me support forum](http://buddypress.org/community/groups/buddypress-follow-me/forum/) at buddypress.org.
 The forums on wordpress.org are rarely checked.
+
+Or In GitHub
+
+https://github.com/dzmounir/buddypress-follow-me
 
 == Changelog ==
 

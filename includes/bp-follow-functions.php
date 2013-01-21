@@ -58,7 +58,8 @@ function bp_follow_start_following( $args = '' ) {
  * @return bool
  */
 function bp_follow_stop_following( $args = '' ) {
-
+	global $bp;
+	
 	$defaults = array(
 		'leader_id'   => bp_displayed_user_id(),
 		'follower_id' => bp_loggedin_user_id()
@@ -73,6 +74,9 @@ function bp_follow_stop_following( $args = '' ) {
 		return false;
 
 	do_action_ref_array( 'bp_follow_stop_following', array( &$follow ) );
+
+	// Remove following notifications from user(add in v1.1)
+	bp_core_delete_notifications_by_type( $leader_id, $bp->follow->id, 'new_follow' );
 
 	return true;
 }
