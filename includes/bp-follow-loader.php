@@ -382,8 +382,7 @@ function bp_follow_load_core_component() {
 	$bp->follow = new BP_Follow_Component;
 	do_action('bp_follow_load_core_component');
 }
-// bp_init to load the nav (add v1.1)
+// to-test (bp_loaded cause the excution of setup_admin_bar after the loading of the view of the menu)
 //add_action( 'bp_init', 'bp_follow_load_core_component' );
 
-// bp_loaded cause the excution of setup_admin_bar after the loading of the view of the menu
 add_action( 'bp_loaded', 'bp_follow_load_core_component', 5 );
