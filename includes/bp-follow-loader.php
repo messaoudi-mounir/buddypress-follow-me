@@ -281,13 +281,10 @@ class BP_Follow_Component extends BP_Component {
 		$user_domain = bp_is_user() ? bp_displayed_user_domain() : bp_loggedin_user_domain();
 		
 		$follow_link = trailingslashit( $user_domain . bp_get_follow_slug() );
-
 		// Need to change the user ID, so if we're not on a member page, $counts variable is still calculated
 		$user_id = bp_is_user() ? bp_displayed_user_id() : bp_loggedin_user_id();
 		$counts  = bp_follow_total_follow_counts( array( 'user_id' => $user_id ) );
 		
-		// Add a few subnav items under the main Follow tab
-
 		$sub_nav[] = array(
 			'name'            =>  sprintf( __( 'Following <span>%d</span>', 'bp-follow' ), $counts['following'] ),
 			'slug'            => 'following',
@@ -297,7 +294,6 @@ class BP_Follow_Component extends BP_Component {
 			'position'        => 10
 		);
 
-		// Add the subnav items to the friends nav item
 		$sub_nav[] = array(
 			'name'            =>  sprintf( __( 'Followers <span>%d</span>', 'bp-follow' ), $counts['followers'] ),
 			'slug'            => 'followers',
@@ -308,8 +304,55 @@ class BP_Follow_Component extends BP_Component {
 		);
 
 		parent::setup_nav( $main_nav, $sub_nav );
+
+
+	}
+
+
+	function setup_admin_bar() {
+		global $bp;
+
+		// Prevent debug notices
+		$wp_admin_nav = array();
+
+		// Menus for logged in user
+		if ( is_user_logged_in() ) {
+
+			$user_domain = bp_is_user() ? bp_displayed_user_domain() : bp_loggedin_user_domain();
+			
+			$follow_link = trailingslashit( $user_domain . bp_get_follow_slug() );
+			$followers_link = trailingslashit( $user_domain . bp_get_follow_slug() . '/' . bp_get_followers_slug() );
+
+			// Need to change the user ID, so if we're not on a member page, $counts variable is still calculated
+			$user_id = bp_is_user() ? bp_displayed_user_id() : bp_loggedin_user_id();
+			$counts  = bp_follow_total_follow_counts( array( 'user_id' => $user_id ) );
+			
+			$wp_admin_nav[] = array(
+				'parent' => 'my-account-buddypress',
+				'id'     => 'my-account-' . bp_get_follow_slug(),
+				'title'  => __( 'Follow', 'bp-follow' ),
+				'href'   => trailingslashit( $follow_link )
+			);
+			
+			// Add main bp following my places submenu
+			$wp_admin_nav[] = array(
+				'parent' => 'my-account-' . bp_get_follow_slug(),
+				'title'  => sprintf( __( 'Following <span class="count">%d</span>', 'bp-follow' ), $counts['following'] ),
+				'href'   => trailingslashit( $follow_link )
+			);
+
+			// Add main bp followers my places submenu
+			$wp_admin_nav[] = array(
+				'parent' => 'my-account-' . bp_get_follow_slug(),
+				'title'  => sprintf( __( 'Followers <span class="count">%d</span>', 'bp-follow' ), $counts['followers'] ),
+				'href'   => trailingslashit( $followers_link )
+			);
+		}
+
+		parent::setup_admin_bar( $wp_admin_nav );
 	}
 }
+
 
 /**
  * Loads your component into the $bp global
@@ -339,4 +382,8 @@ function bp_follow_load_core_component() {
 	$bp->follow = new BP_Follow_Component;
 	do_action('bp_follow_load_core_component');
 }
-add_action( 'bp_loaded', 'bp_follow_load_core_component' );
+// bp_init to load the nav (add v1.1)
+//add_action( 'bp_init', 'bp_follow_load_core_component' );
+
+// bp_loaded cause the excution of setup_admin_bar after the loading of the view of the menu
+add_action( 'bp_loaded', 'bp_follow_load_core_component', 5 );

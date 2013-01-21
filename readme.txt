@@ -40,7 +40,8 @@ https://github.com/dzmounir/buddypress-follow-me
 == Changelog ==
 = 1.1 =
 * Update Tested up to: WordPress 3.5 / BuddyPress 1.6.x
-* Fix probleme when a user A follow user B it will get a notification and when user A unfollow user B (right after following) the notification did not remove.
+* Fix navigation problem when wp admin is used
+* Fix problem when a user A follow user B it will get a notification and when user A unfollow user B (right after following) the notification did not remove.
 
 = 1.0 =
 * Initial release.

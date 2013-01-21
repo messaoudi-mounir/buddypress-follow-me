@@ -76,6 +76,37 @@ function bp_follow_slug() {
 		return apply_filters( 'bp_get_follow_slug', $follow_slug );
 	}
 
+
+/**
+ * Echo the component's slug
+ *
+ * @package BuddyPress_Skeleton_Component
+ * @since 1.6
+ */
+function bp_followers_slug() {
+	echo bp_get_followers_slug();
+}
+	/**
+	 * Return the component's slug
+	 *
+	 * Having a template function for this purpose is not absolutely necessary, but it helps to
+	 * avoid too-frequent direct calls to the $bp global.
+	 *
+	 * @package BuddyPress_Skeleton_Component
+	 * @since 1.6
+	 *
+	 * @uses apply_filters() Filter 'bp_get_followers_slug' to change the output
+	 * @return str $follow_slug The slug from 'followers', if it exists
+	 */
+	function bp_get_followers_slug() {
+		global $bp;
+
+		// Avoid PHP warnings, in case the value is not set for some reason
+		$followers_slug = 'followers';
+
+		return apply_filters( 'bp_get_followers_slug', $followers_slug );
+	}
+
 /**
  * Echo the component's root slug
  *
