@@ -38,6 +38,7 @@ Or In GitHub
 https://github.com/dzmounir/buddypress-follow-me
 
 == Changelog ==
+
 = 1.1 =
 * Update Tested up to: WordPress 3.5 / BuddyPress 1.6.x
 * Fix navigation problem when wp admin is used
