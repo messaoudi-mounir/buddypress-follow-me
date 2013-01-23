@@ -10,9 +10,9 @@
 // Exit if accessed directly
 if ( !defined( 'ABSPATH' ) ) exit;
 
-if ( file_exists( dirname( __FILE__ ) . '/languages/' . get_locale() . '.mo' ) )
-	load_textdomain( 'bp-follow', dirname( __FILE__ ) . '/bp-follow/languages/' . get_locale() . '.mo' );
-
+if ( file_exists( BP_FOLLOW_PLUGIN_DIR . '/languages/' . get_locale() . '.mo' ) )
+	load_textdomain( 'bp-follow', BP_FOLLOW_PLUGIN_DIR . '/languages/' . get_locale() . '.mo' );
+	
 /**
  * Implementation of BP_Component
  *

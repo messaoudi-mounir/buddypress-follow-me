@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: buddypress-follow-me\n"
-"POT-Creation-Date: 2012-10-14 18:32-0000\n"
-"PO-Revision-Date: 2012-10-14 18:32-0000\n"
+"POT-Creation-Date: 2013-01-23 22:44-0000\n"
+"PO-Revision-Date: 2013-01-23 22:51-0000\n"
 "Last-Translator: \n"
 "Language-Team: megainfo\n"
 "Language: english\n"
@@ -76,30 +76,41 @@ msgstr ""
 msgid "Stopped following"
 msgstr ""
 
-#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-functions.php:320
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-functions.php:324
 msgid "The public activity for everyone you are following on this site."
 msgstr ""
 
-#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-functions.php:320
-#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-functions.php:370
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-functions.php:324
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-functions.php:374
 #: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-loader.php:292
 #, php-format
 msgid "Following <span>%d</span>"
 msgstr ""
 
-#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-loader.php:52
-#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-loader.php:274
-#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-template.php:260
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-loader.php:55
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-loader.php:277
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-loader.php:336
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-template.php:291
 msgid "Follow"
 msgstr ""
 
-#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-loader.php:238
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-loader.php:241
 msgid "Search Follows..."
 msgstr ""
 
-#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-loader.php:302
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-loader.php:301
 #, php-format
 msgid "Followers <span>%d</span>"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-loader.php:343
+#, php-format
+msgid "Following <span class=\"count\">%d</span>"
+msgstr ""
+
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-loader.php:350
+#, php-format
+msgid "Followers <span class=\"count\">%d</span>"
 msgstr ""
 
 #: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-notifications.php:30
@@ -152,7 +163,7 @@ msgstr ""
 msgid "To disable these notifications please log in and go to: %s"
 msgstr ""
 
-#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-template.php:253
+#: C:\work\php\wamp\www\wordpressdev\wp-content\plugins\buddypress-follow-me/includes/bp-follow-template.php:284
 msgid "Unfollow"
 msgstr ""
 
