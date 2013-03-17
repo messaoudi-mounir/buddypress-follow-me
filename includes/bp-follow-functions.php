@@ -1,4 +1,5 @@
 <?php
+
 /**
  *
  * Functions in this file allow this component to hook into BuddyPress so it interacts

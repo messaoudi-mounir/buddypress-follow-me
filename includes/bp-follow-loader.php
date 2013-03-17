@@ -1,4 +1,5 @@
 <?php
+
 /*
  * If you want the users of your component to be able to change the values of your other custom constants,
  * you can use this code to allow them to add new definitions to the wp-config.php file and set the value there.
