@@ -144,7 +144,6 @@ class BP_Follow_Component extends BP_Component {
 	 * @since 1.6
 	 */
 	function includes() {
-
 		// Files to include
 		$includes = array(
 			'includes/bp-follow-actions.php',
@@ -252,6 +251,12 @@ class BP_Follow_Component extends BP_Component {
 
 		if ( !defined( 'BP_FOLLOWING_SLUG' ) )
 			define( 'BP_FOLLOWING_SLUG', 'following' );
+
+		// add check php version 5.4 (Call-time pass-by-reference has been removed since 5.4)
+		if (version_compare(PHP_VERSION, '5.4.0') >= 0){
+		    $bp->{$this->id}->followers = new stdClass;
+		    $bp->{$this->id}->following = new stdClass;
+		}
 
 		$bp->{$this->id}->followers->slug = BP_FOLLOWERS_SLUG;
 		$bp->{$this->id}->following->slug = BP_FOLLOWING_SLUG;

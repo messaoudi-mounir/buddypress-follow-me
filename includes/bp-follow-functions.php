@@ -101,8 +101,11 @@ function bp_follow_is_following( $args = '' ) {
 	extract( $r, EXTR_SKIP );
 
 	$follow = new BP_Follow( $leader_id, $follower_id );
-	
-	return apply_filters( 'bp_follow_is_following', (int)$follow->id, &$follow );
+	// add check php version 5.4 (Call-time pass-by-reference has been removed since 5.4)
+	if (version_compare(PHP_VERSION, '5.4.0') >= 0) 
+    	return apply_filters( 'bp_follow_is_following', (int)$follow->id, $follow );
+	else
+		return apply_filters( 'bp_follow_is_following', (int)$follow->id, &$follow );
 }
 
 /**
