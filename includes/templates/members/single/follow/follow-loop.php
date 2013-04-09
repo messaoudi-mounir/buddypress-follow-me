@@ -1,5 +1,4 @@
 <?php
-
 /**
  *
  * @package BuddyPress_Skeleton_Component
@@ -114,6 +113,5 @@
 	</div>
 
 <?php endif; ?>
-
 
 <?php do_action( 'bp_after_follow_loop' ); ?>

@@ -1,5 +1,4 @@
 <?php
-
 /*
  * If you want the users of your component to be able to change the values of your other custom constants,
  * you can use this code to allow them to add new definitions to the wp-config.php file and set the value there.
@@ -261,7 +260,6 @@ class BP_Follow_Component extends BP_Component {
 
 		$bp->{$this->id}->followers->slug = BP_FOLLOWERS_SLUG;
 		$bp->{$this->id}->following->slug = BP_FOLLOWING_SLUG;
-
 	}
 
 	/**
@@ -310,10 +308,7 @@ class BP_Follow_Component extends BP_Component {
 		);
 
 		parent::setup_nav( $main_nav, $sub_nav );
-
-
 	}
-
 
 	function setup_admin_bar() {
 		global $bp;

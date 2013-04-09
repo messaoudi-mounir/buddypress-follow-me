@@ -1,5 +1,4 @@
 <?php
-
 /**
  *
  * Functions in this file allow this component to hook into BuddyPress so it interacts
@@ -183,8 +182,9 @@ function bp_follow_total_follow_counts( $args = '' ) {
 function bp_follow_inject_member_follow_status( $has_members ) {
 	global $members_template;
 
-	if ( empty( $has_members ) )
-		return $has_members;
+	//mod:bp1.7
+	//if ( empty( $has_members ) )
+	//	return $has_members;
 
 	$user_ids = array();
 
@@ -338,7 +338,6 @@ add_action( 'bp_before_activity_type_tab_friends', 'bp_follow_add_activity_tab' 
  */
 function bp_follow_add_activity_scope_filter( $qs, $object, $filter, $scope ) {
 	global $bp;
-
 	// Only filter on directory pages (no action) and the following scope on activity object.
 	if ( ( !empty( $bp->current_action ) && !bp_is_current_action( 'following' ) ) || 'following' != $scope || 'activity' != $object )
 		return $qs;
@@ -355,6 +354,7 @@ function bp_follow_add_activity_scope_filter( $qs, $object, $filter, $scope ) {
 	return apply_filters( 'bp_follow_add_activity_scope_filter', $qs, $filter );
 }
 add_filter( 'bp_dtheme_ajax_querystring', 'bp_follow_add_activity_scope_filter', 10, 4 );
+add_filter( 'bp_legacy_theme_ajax_querystring', 'bp_follow_add_activity_scope_filter', 10, 4 );
 
 /* Hook into the member directory tabs and filtering */
 
@@ -406,6 +406,7 @@ function bp_follow_add_member_directory_filter( $qs, $object, $filter, $scope  )
 
 }
 add_filter( 'bp_dtheme_ajax_querystring', 'bp_follow_add_member_directory_filter', 10, 4 );
+add_filter( 'bp_legacy_theme_ajax_querystring', 'bp_follow_add_member_directory_filter', 10, 4 );
 
 /**
  * On a user's "Activity > Following" screen, set the activity scope to "following".
@@ -440,7 +441,6 @@ add_action( 'bp_activity_screen_following', 'bp_follow_set_activity_following_sc
  * @since 1.1.1
  */
 function bp_follow_set_activity_following_scope_on_ajax() {
-
 	// are we in an ajax request?
 	$is_ajax = ( isset( $_SERVER['HTTP_X_REQUESTED_WITH'] ) && strtolower( $_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest' );
 
@@ -493,11 +493,12 @@ add_action( 'make_spam_user',	'bp_follow_remove_data' );
 function bp_follow_load_template_filter( $found_template, $templates ) {
 	global $bp;
 
-	/**
-	 * Only filter the template location when we're on the follow component pages.
-	 */
-	if ( $bp->current_component != $bp->follow->slug )
-		return $found_template;
+    //Only filter the template location when we're on the bp-plugin component pages.
+	//mod:bp1.7
+	//
+    if( !bp_follow_is_bp_default() || !bp_is_current_component( $bp->follow->slug )){
+    	return $found_template;
+    }
 
 	foreach ( (array) $templates as $template ) {
 		if ( file_exists( STYLESHEETPATH . '/' . $template ) )
@@ -516,6 +517,31 @@ add_filter( 'bp_located_template', 'bp_follow_load_template_filter', 10, 2 );
 * http://buddypress.trac.wordpress.org/ticket/2198
 */
 function bp_follow_load_sub_template( $template ) {
-	if ( $located_template = apply_filters( 'bp_located_template', locate_template( $template , false ), $template ) )	
-		load_template( apply_filters( 'bp_load_template', $located_template ) );
+	if( empty( $template ) )
+        return false;
+
+    if( bp_follow_is_bp_default() ) {
+      	//locate_template( array(  $template . '.php' ), true );
+    	if ( $located_template = apply_filters( 'bp_located_template', locate_template( $template , false ), $template ) )	
+			load_template( apply_filters( 'bp_load_template', $located_template ) );
+ 
+    } else {
+        bp_get_template_part( $template );
+    }
+
+	//if ( $located_template = apply_filters( 'bp_located_template', locate_template( $template , false ), $template ) )	
+	//	load_template( apply_filters( 'bp_load_template', $located_template ) );
+}
+
+//mod:bp1.7
+function bp_follow_is_bp_default() {
+ 
+    // if active theme is BP Default or a child theme, then we return true
+        // as i was afraid a BuddyPress theme that is not relying on BP Default might
+        // be active, i added a BuddyPress version check.
+        // I imagine that once version 1.7 will be released, this case will disappear.
+    if( in_array( 'bp-default', array( get_stylesheet(), get_template() ) ) || ( defined( 'BP_VERSION' ) && version_compare( BP_VERSION, '1.7-beta1-6797', '<' ) ) )
+        return true;
+    else
+        return false;
 }

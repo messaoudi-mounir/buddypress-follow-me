@@ -7,6 +7,8 @@
  * @subpackage bp-default
  */
 
+if( bp_follow_is_bp_default() ):
+
 get_header( 'buddypress' ); ?>
 
 	<div id="content">
@@ -63,3 +65,21 @@ get_header( 'buddypress' ); ?>
 
 <?php get_sidebar( 'buddypress' ); ?>
 <?php get_footer( 'buddypress' ); ?>
+
+<?php
+else :
+?>
+<div id="buddypress">
+	<?php do_action( 'bp_before_member_body' ); ?>
+
+	<div id="follow-dir-list" class="follow dir-list">
+
+	<?php bp_follow_load_sub_template ( 'members/single/follow/follow-loop' ); ?>
+		
+	</div><!-- #follows-dir-list -->
+
+	<?php do_action( 'bp_after_member_body' ); ?>
+</div>	
+<?php
+endif;
+?>

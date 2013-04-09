@@ -2,8 +2,8 @@
 Contributors: megainfo
 Tags: buddypress,follow,followers,following,badge,follow me,subscribe,subscription,tweet,twitter
 Requires at least: WordPress 3.4, BuddyPress 1.5
-Tested up to: WordPress 3.4 / BuddyPress 1.6
-Stable tag: 1.1
+Tested up to: WordPress 3.5 / BuddyPress 1.7
+Stable tag: 1.2
 
 == Description ==
 

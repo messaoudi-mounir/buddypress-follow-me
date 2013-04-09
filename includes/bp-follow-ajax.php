@@ -47,10 +47,8 @@ function bp_follow_object_template_loader() {
 	// Bail if not a POST action
 	if ( 'POST' !== strtoupper( $_SERVER['REQUEST_METHOD'] ) )
 		return;
-	
 	// Sanitize the post object
 	$object = esc_attr( $_POST['object'] );
-	
 	// Locate the object template
 	//locate_template( array( "$object/$object-loop.php" ), true );
 	bp_core_load_template( apply_filters( 'bp_follow_template', "members/single/follow/follow-loop" ) );
