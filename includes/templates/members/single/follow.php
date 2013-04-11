@@ -3,8 +3,7 @@
 /**
  * BuddyPress - Users Home
  *
- * @package BuddyPress
- * @subpackage bp-default
+ * @package BuddyPress_Follow_Me
  */
 
 if( bp_follow_is_bp_default() ):

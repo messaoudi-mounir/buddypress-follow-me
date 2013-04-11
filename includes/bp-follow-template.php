@@ -314,10 +314,8 @@ function bp_follow_add_follow_button( $args = '' ) {
 	add_shortcode('bp_follow_me', 'bp_follow_get_add_follow_button');	
 
 
-
-
-
 /*
+@TODO Add Follow  Checkbox Setting in member profil settings
 
 add_action( 'show_user_profile', 'my_show_extra_profile_fields' );
 add_action( 'edit_user_profile', 'my_show_extra_profile_fields' );

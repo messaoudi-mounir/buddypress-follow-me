@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * @package BuddyPress_Skeleton_Component
+ * @package BuddyPress_Follow_Me
  * @since 1.6
  */
 

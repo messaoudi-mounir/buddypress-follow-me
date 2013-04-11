@@ -2,11 +2,19 @@ Version 1.0 ( October 13th 2012 )
 --------------------------------------------------------------
 
 - Initial Release.
+
 Version 1.1 ( January 21th 2013 )
 --------------------------------------------------------------
+- Update Tested up to: WordPress 3.5 / BuddyPress 1.6.x
+- Fix navigation problem when wp admin is used
+- Fix problem when a user A follow user B it will get a notification and when user A unfollow user B (right after following) the notification did not remove.
 
-- Version 1.1.
 
+Version 1.2 ( April 9th 2013 )
+--------------------------------------------------------------
+- Update Tested up to: WordPress 3.5 / BuddyPress 1.7
 
+Version 1.2.1 ( April 11th 2013 )
+- Fix bug theme compatibility  (fix bp_follow_is_bp_default() function)
 
 

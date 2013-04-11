@@ -535,13 +535,20 @@ function bp_follow_load_sub_template( $template ) {
 
 //mod:bp1.7
 function bp_follow_is_bp_default() {
- 
     // if active theme is BP Default or a child theme, then we return true
-        // as i was afraid a BuddyPress theme that is not relying on BP Default might
-        // be active, i added a BuddyPress version check.
-        // I imagine that once version 1.7 will be released, this case will disappear.
-    if( in_array( 'bp-default', array( get_stylesheet(), get_template() ) ) || ( defined( 'BP_VERSION' ) && version_compare( BP_VERSION, '1.7-beta1-6797', '<' ) ) )
+    // as i was afraid a BuddyPress theme that is not relying on BP Default might
+    // be active, i added a BuddyPress version check.
+    // I imagine that once version 1.7 will be released, this case will disappear.
+    /*
+    if( in_array( 'bp-default', array( get_stylesheet(), get_template() ) ) || ( defined( 'BP_VERSION' ) && version_compare( BP_VERSION, '1.6', '>' ) ) )
         return true;
     else
         return false;
+    */
+    // if active theme is BP Default or a child theme, then we return true
+ 	// If the Buddypress version  is < 1.7, then return true too
+   if(current_theme_supports('buddypress') || in_array( 'bp-default', array( get_stylesheet(), get_template() ) )  || ( defined( 'BP_VERSION' ) && version_compare( BP_VERSION, '1.7', '<' ) ))
+   		return true;
+   else 
+   		return false;
 }

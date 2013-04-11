@@ -3,7 +3,7 @@ Contributors: megainfo
 Tags: buddypress,follow,followers,following,badge,follow me,subscribe,subscription,tweet,twitter
 Requires at least: WordPress 3.4, BuddyPress 1.5
 Tested up to: WordPress 3.5 / BuddyPress 1.7
-Stable tag: 1.2
+Stable tag: 1.2.1
 
 == Description ==
 
@@ -38,6 +38,11 @@ Or In GitHub
 https://github.com/dzmounir/buddypress-follow-me
 
 == Changelog ==
+= 1.2.1 =
+* Fix bug theme compatibility 
+
+= 1.2 =
+* Update Tested up to: WordPress 3.5 / BuddyPress 1.7
 
 = 1.1 =
 * Update Tested up to: WordPress 3.5 / BuddyPress 1.6.x

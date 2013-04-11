@@ -13,45 +13,31 @@
 if ( !defined( 'ABSPATH' ) ) exit;
 
 /**
- * bp-follow_screen_one()
+ * bp_follow_screen()
  *
- * Sets up and displays the screen output for the sub nav item "follow/screen-one"
+ * Sets up and displays the screen output for the sub nav item "/follow"
  */
-/*
-function bp_follow_screen() {
-	global $bp;
-	//bp_update_is_directory( true, 'follow' );
-    bp_update_is_directory( true, 'members/single/follow' );
-	
-     Add a do action here, so your component can be extended by others. 
-	//do_action( 'bp_follow_screen' );
-
-	bp_core_load_template( apply_filters( 'bp_follow_screen', 'members/single/follow' ) );
-}
-add_action('bp_screens', 'bp_follow_screen');
- */
-
-
 function bp_follow_screen() {
         bp_update_is_directory( true, 'follow' );
         do_action( 'bp_follow_screen' );
         bp_core_load_template( apply_filters( 'bp_follow_screen', 'members/single/follow' ) );
 }
 add_action( 'bp_screens', 'bp_follow_screen' );
+ 
 
 /**
  * bp_following_screen()
  *
- * Sets up and displays the screen output for the sub nav item "follow/screen-two"
+ * Sets up and displays the screen output for the sub nav item "follow/following"
  */
 function bp_following_screen() {
 	global $bp;
 	bp_update_is_directory( true, 'following' );
-	/* Add a do action here, so your component can be extended by others. */
 	do_action( 'bp_following_screen' );
-	bp_core_load_template( apply_filters( 'bp_following_screen', 'follow' ) );
+	bp_core_load_template( apply_filters( 'bp_following_screen', 'members/single/follow' ) );
 }
 add_action('bp_screens', 'bp_following_screen');
+ 
 
 /**
  * bp_following_screen()
@@ -137,7 +123,7 @@ function bp_follow_add_template_stack( $templates ) {
  
 add_filter( 'bp_get_template_stack', 'bp_follow_add_template_stack', 10, 1 );
 
-/* todo (add sub nav  profil > member > activity > follow )
+/* @TODO (add sub nav  profil > member > activity > follow )
 function bp_setup_nav_follow() {
     global $bp;
    bp_core_new_nav_item( array(
