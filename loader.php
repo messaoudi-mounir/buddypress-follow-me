@@ -3,7 +3,7 @@
 Plugin Name: BuddyPress FollowMe
 Plugin URI: 
 Description: BP FollowMe Allow members to follow other members activity.
-Version: 1.2
+Version: 1.2.1
 Requires at least:  WP 3.4, BuddyPress 1.5
 Tested up to: BuddyPress 1.5, 1.7
 License: GNU General Public License 2.0 (GPL) http://www.gnu.org/licenses/gpl.html
@@ -16,7 +16,7 @@ Network: true
 if ( !defined( 'ABSPATH' ) ) exit;
 
 /*************************************************************************************************************
- --- FollowMe 1.2 ---
+ --- FollowMe 1.2.1 ---
 
  IMPORTANT: DO NOT configure your component so that it has to run in the /plugins/buddypress/ directory. If you
  do this, whenever the user auto-upgrades BuddyPress - your custom component will be deleted automatically. Design
@@ -28,7 +28,7 @@ define( 'BP_FOLLOW_IS_INSTALLED', 1 );
 
 // Define a constant that will hold the current version number of the component
 // This can be useful if you need to run update scripts or do compatibility checks in the future
-define( 'BP_FOLLOW_VERSION', '1.2' );
+define( 'BP_FOLLOW_VERSION', '1.2.1' );
 
 // Define a constant that we can use to construct file paths throughout the component
 define( 'BP_FOLLOW_PLUGIN_DIR', dirname( __FILE__ ) );
