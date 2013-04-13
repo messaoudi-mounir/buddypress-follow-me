@@ -3,7 +3,7 @@ Contributors: megainfo
 Tags: buddypress,follow,followers,following,badge,follow me,subscribe,subscription,tweet,twitter
 Requires at least: WordPress 3.4, BuddyPress 1.5
 Tested up to: WordPress 3.5 / BuddyPress 1.7
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 
 == Description ==
 
@@ -38,6 +38,10 @@ Or In GitHub
 https://github.com/dzmounir/buddypress-follow-me
 
 == Changelog ==
+= 1.2.2 =
+* Fix bug white screen in homepage for bp < 1.7 
+* add activity > follow in profile page
+
 = 1.2.1 =
 * Fix bug theme compatibility 
 

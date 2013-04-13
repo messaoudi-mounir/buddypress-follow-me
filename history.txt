@@ -17,4 +17,8 @@ Version 1.2 ( April 9th 2013 )
 Version 1.2.1 ( April 11th 2013 )
 - Fix bug theme compatibility  (fix bp_follow_is_bp_default() function)
 
+Version 1.2.2 ( April 13th 2013 )
+- Fix bug white screen in homepage for bp < 1.7 
+- add activity > follow in profile page
+
 
