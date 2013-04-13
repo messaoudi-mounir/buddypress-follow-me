@@ -12,7 +12,7 @@ This plugin works exactly the same way that the friends component of BuddyPress 
 
 The plugin integrates seamlessly with your site, adding a new activity stream tab, follow/unfollow buttons to member profiles and adds tab to display the users following/followers in the member page and total counts.
 
-This plugin has been updated for BuddyPress 1.6, and uses features of BP 1.5 (in particular, BP_Component) that are not available in earlier versions of BuddyPress.
+This plugin has been updated for BuddyPress 1.7, and uses features of BP 1.5 (in particular, BP_Component) that are not available in earlier versions of BuddyPress.
 
 == Installation ==
 

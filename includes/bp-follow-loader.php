@@ -307,6 +307,19 @@ class BP_Follow_Component extends BP_Component {
 			'position'        => 20
 		);
 
+		if ( bp_is_active( 'activity' ) && apply_filters( 'bp_follow_show_activity_subnav', true ) ) {
+
+			bp_core_new_subnav_item( array(
+				'name'            => __( 'Following', 'bp-follow' ),
+				'slug'            => 'following',
+				'parent_url'      => trailingslashit( $user_domain . bp_get_activity_slug() ),
+				'parent_slug'     => bp_get_activity_slug(),
+				'screen_function' => 'bp_follow_screen_activity_following',
+				'position'        => 21,
+				'item_css_id'     => 'activity-following'
+			) );
+		}
+
 		parent::setup_nav( $main_nav, $sub_nav );
 	}
 
