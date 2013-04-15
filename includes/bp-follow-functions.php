@@ -547,8 +547,28 @@ function bp_follow_is_bp_default() {
     */
     // if active theme is BP Default or a child theme, then we return true
  	// If the Buddypress version  is < 1.7, then return true too
+ 	/*
    if(current_theme_supports('buddypress') || in_array( 'bp-default', array( get_stylesheet(), get_template() ) )  || ( defined( 'BP_VERSION' ) && version_compare( BP_VERSION, '1.7', '<' ) ))
    		return true;
    else 
    		return false;
+   	*/
+    if(current_theme_supports('buddypress') || in_array( 'bp-default', array( get_stylesheet(), get_template() ) )  || ( defined( 'BP_VERSION' ) && version_compare( BP_VERSION, '1.7', '<' ) ))
+   		return true;
+   else {
+	    // check to see if the 'buddypress' tag is in the theme 
+	    // some bp themes are not yet compatible to bp 1.7 but the plugin is updated
+
+   		// get current theme
+	    $theme = wp_get_theme();
+	    // get current theme's tags
+	    $theme_tags = ! empty( $theme->tags ) ? $theme->tags : array();
+
+	    // or if stylesheet is 'bp-default'
+	    $backpat = in_array( 'buddypress', $theme_tags );    
+	    if($backpat)
+	    	return true;
+   		else 
+   			return false;
+   }
 }
